@@ -1,15 +1,8 @@
-import random
-from flask import Flask, jsonify  # Import Flask and jsonify here
+from flask import Flask, jsonify
+from todo_app_backend import ToDoBackend
 
-class ToDoBackend:
-    def __init__(self):
-        self.tasks = []
-
-    # ... (backend logic)
-
-# Create Flask app instance
 app = Flask(__name__)
-backend = ToDoBackend()  # Instantiate ToDoBackend outside of __main__
+backend = ToDoBackend()
 
 # API endpoint to get tasks
 @app.route("/tasks", methods=["GET"])
